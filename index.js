@@ -441,14 +441,14 @@ module.exports.some = some;
  * and passed into the passed in function.
  * @param {Function} func: The function that will be called for each element
  * within the array.
- * @param {*} seed: The initial value, passed into the function as the previous
+ * @param {*} initialValue: The initial value, passed into the function as the previous
  * result during the first time the passed in function is called.
  * 
  * @return {*}: The result of the final function call will be returned.
  */
-function reduce(array, func, seed) {
-    var prev = seed;
-    if (seed === undefined) {
+function reduce(array, func, initialValue) {
+    var prev = initialValue;
+    if (initialValue === undefined) {
         prev = array[0];
         for (let i = 1; i < array.length; i++) {
             prev = func(prev, array[i], i);
